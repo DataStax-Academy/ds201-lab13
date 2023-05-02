@@ -1,0 +1,22 @@
+image: gitpod/workspace-full:2023-02-27-14-39-56
+tasks:
+  - name: install-dependencies
+    before: |
+      printf 'unset JAVA_TOOL_OPTIONS\n' >> $HOME/.bashrc
+    init: |
+      curl https://katapod-file-store.s3.us-west-1.amazonaws.com/ds201/lab13-environment.tar.gz \
+      --output environment.tar.gz
+      tar xf environment.tar.gz
+    command: | 
+      ./node1/bin/cassandra
+      ./node2/bin/cassandra      
+      ./node3/bin/cassandra
+github:
+  prebuilds:
+    main: true
+ports:
+  - port: 1-9999
+    onOpen: ignore
+vscode:
+   extensions:
+    - https://github.com/DataStax-Academy/katapod/releases/download/stable/katapod-stable.vsix
