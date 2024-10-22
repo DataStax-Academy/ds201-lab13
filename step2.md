@@ -70,6 +70,8 @@ You should see that the node is storing hints. You can also run ls multiple time
   <summary>Solution</summary>
 
 ```cql
+node1/bin/cqlsh
+
 CONSISTENCY;
 ```
 </details>
@@ -91,7 +93,7 @@ QUIT
 
 Wait for *node3* to start.
 
-✅ Run ls on the *hints* directory of the non-replica node like you did before:
+✅ Run `ls` on the *hints* directory of the non-replica node like you did before:
 
 ```
 ### {"execute": false}
